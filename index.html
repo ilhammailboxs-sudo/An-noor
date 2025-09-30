@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AN-NOOR PRE SCHOOL - மாணவர் சேர்க்கை</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;500;700&family=Noto+Sans+Tamil:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Calm Harmony (Soft Beige, Deep Green, Warm Gold) -->
+    <!-- Application Structure Plan: A single, vertical scrolling landing page designed as an interactive digital brochure. The structure flows from a welcoming Hero section, to an interactive 'Why Choose Us?' section with clickable cards for key features, followed by a section on our balanced approach, and concluding with a clear call-to-action and contact form. This structure is chosen to guide parents persuasively through the school's unique value proposition, making the information engaging and easy to digest, which is more effective for an admission notice than a static report layout. -->
+    <!-- Visualization & Content Choices: The source is a text advertisement. Goal: Persuade and Inform. Method: Use structured HTML/CSS with interactive elements instead of data charts. Key interactions include clickable cards (using vanilla JS to toggle content visibility) to detail the school's features. This encourages exploration. Icons are represented by Unicode characters for simplicity and speed. This design avoids static data visualization libraries as they are not needed, focusing purely on interactive content presentation. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Noto Sans Tamil', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Baloo Thambi 2', cursive;
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        .feature-card.active {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .feature-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-gray-800 smooth-scroll">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold text-green-800">
+                AN-NOOR PRE SCHOOL
+            </div>
+            <div>
+                <a href="#contact" class="bg-amber-500 text-white font-bold py-2 px-4 rounded-full hover:bg-amber-600 transition duration-300">தொடர்புக்கு</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="bg-green-800 text-white text-center py-20 sm:py-32" style="background-image: url('https://placehold.co/1200x600/047857/FFFFFF?text=Welcome&font=noto-sans'); background-blend-mode: multiply; background-size: cover; background-position: center;">
+            <div class="container mx-auto px-6 bg-green-800 bg-opacity-70 py-10 rounded-xl">
+                <h3 class="text-lg">அஸ்ஸலாமு அலைக்கும் (வரஹ்)</h3>
+                <h1 class="text-4xl md:text-6xl font-bold mt-2">AN-NOOR PRE SCHOOL</h1>
+                <h2 class="text-xl md:text-3xl mt-4 text-amber-300">மார்க்கப் பற்றோடு வளர, அறிவின் ஒளியில் சிறக்க!</h2>
+                <p class="mt-6 text-lg">புதிய மாணவர்களுக்கான அனுமதி கோரல் (வயது: 3-5)</p>
+            </div>
+        </section>
+
+        <!-- Introduction for Parents -->
+        <section id="about" class="py-16 sm:py-24">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-green-800">அன்பான பெற்றோர்களே,</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">
+                    உங்கள் இல்லத்தின் செல்வங்களை, இஸ்லாமிய ஒழுக்கம் நிறைந்த, தன்னம்பிக்கை கொண்ட சிறார்களாய் வளர்க்க ஓர் அரிய வாய்ப்பு! சின்னஞ் சிறார்களே, உங்களை அன்-நூர் பாலர் பாடசாலை அன்போடு வரவேற்கிறது!
+                </p>
+            </div>
+        </section>
+        
+        <!-- Key Features Section -->
+        <section id="features" class="bg-stone-100 py-16 sm:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-green-800">எமது பிரத்தியேக சிறப்பம்சங்கள்</h2>
+                    <p class="mt-2 text-gray-600">எங்கள் தனித்துவமான அணுகுமுறையை பற்றி தெரிந்துகொள்ளுங்கள். ஒவ்வொரு அம்சத்தையும் கிளிக் செய்யவும்.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    
+                    <div class="feature-card-wrapper">
+                        <div class="feature-card bg-white p-6 rounded-lg shadow-lg cursor-pointer transition-transform duration-300" data-target="feature1">
+                            <div class="flex items-center">
+                                <span class="text-3xl mr-4 text-amber-500">📖</span>
+                                <h3 class="text-xl font-bold text-green-800">அல்-குர்ஆன் மனனம்</h3>
+                            </div>
+                        </div>
+                        <div id="feature1" class="feature-details bg-white p-6 rounded-b-lg -mt-2">
+                            <p class="text-gray-600">வீண் பாடல்களை மறந்து, குர்ஆனின் அழகிய வரிகளை இதயத்தில் பதிய வைக்கும் பிரத்தியேகப் பயிற்சி வழங்கப்படும்.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card-wrapper">
+                         <div class="feature-card bg-white p-6 rounded-lg shadow-lg cursor-pointer transition-transform duration-300" data-target="feature2">
+                            <div class="flex items-center">
+                                <span class="text-3xl mr-4 text-amber-500">📱➡️📚</span>
+                                <h3 class="text-xl font-bold text-green-800">அறிவுத் தூண்டல்</h3>
+                            </div>
+                        </div>
+                        <div id="feature2" class="feature-details bg-white p-6 rounded-b-lg -mt-2">
+                             <p class="text-gray-600">கைப்பேசியில் வீணாகக் கழியும் பொழுதுகளுக்கு விடை கொடுத்து, அல்-குர்ஆன் பாடப்புத்தகங்கள் மற்றும் கைவினைப் பொருட்களுடன் வளரும் அறிவு நிறைந்த சிறார்களாக மாற்றுவோம்.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card-wrapper">
+                        <div class="feature-card bg-white p-6 rounded-lg shadow-lg cursor-pointer transition-transform duration-300" data-target="feature3">
+                            <div class="flex items-center">
+                                <span class="text-3xl mr-4 text-amber-500">🎨🎵🎲</span>
+                                <h3 class="text-xl font-bold text-green-800">வித்தியாசமான கற்பித்தல்</h3>
+                            </div>
+                        </div>
+                         <div id="feature3" class="feature-details bg-white p-6 rounded-b-lg -mt-2">
+                            <p class="text-gray-600">ஆடல், பாடல், மற்றும் விளையாட்டுக்கள் வாயிலாக அடிப்படை இஸ்லாமியக் கல்வி மற்றும் பொது அறிவை ஊட்டும் அழகான, வித்தியாசமான வழிமுறைகள்.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card-wrapper">
+                         <div class="feature-card bg-white p-6 rounded-lg shadow-lg cursor-pointer transition-transform duration-300" data-target="feature4">
+                            <div class="flex items-center">
+                                <span class="text-3xl mr-4 text-amber-500">🏫✨</span>
+                                <h3 class="text-xl font-bold text-green-800">பாதுகாப்பான சூழல்</h3>
+                            </div>
+                        </div>
+                        <div id="feature4" class="feature-details bg-white p-6 rounded-b-lg -mt-2">
+                            <p class="text-gray-600">புதுப் பொலிவுடனும், பாதுகாப்பான வசதிகளுடனும் கூடிய வகுப்பறைச் சூழல் உங்கள் பிள்ளைகளுக்காகக் காத்திருக்கிறது.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section id="contact" class="py-16 sm:py-24">
+             <div class="container mx-auto px-6">
+                <div class="bg-green-800 text-white rounded-lg shadow-xl p-8 md:p-12 text-center">
+                    <h2 class="text-3xl font-bold">இணைந்து கைகோருங்கள்!</h2>
+                    <p class="mt-4 max-w-2xl mx-auto">
+                        உங்கள் பிள்ளைகளைச் சிறந்த முறையில் வழிநடாத்திட, எங்களது அனுபவம் வாய்ந்த ஆசிரியர்களுடன் இணைந்து கைகோர்க்க அன்புடன் அழைக்கின்றோம். மேலும் விவரங்களுக்கு எங்களை தொடர்பு கொள்ளவும்.
+                    </p>
+                    <div class="mt-8">
+                        <p class="text-lg font-semibold">இடம்: <span class="font-normal">[உங்கள் முகவரியை இங்கே சேர்க்கவும்]</span></p>
+                        <p class="text-lg font-semibold mt-2">தொலைபேசி: <span class="font-normal">[வாட்ஸ்அப் இணைகின்ற எண்: (நாட்டுக் குறியீட்டுடன்)]</span></p>
+                    </div>
+                     <div class="mt-8">
+                        <a href="#contact-form" class="bg-amber-500 text-white font-bold py-3 px-6 rounded-full hover:bg-amber-600 transition duration-300 text-lg">இப்போதே விண்ணப்பிக்கவும்</a>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact-form" class="bg-stone-100 py-16 sm:py-24">
+            <div class="container mx-auto px-6 max-w-xl">
+                <h2 class="text-3xl font-bold text-center text-green-800 mb-8">மாணவர் சேர்க்கை விவரங்கள்</h2>
+                <form id="admissionForm" class="bg-white p-8 rounded-lg shadow-lg">
+                    <!-- The form confirmation message is removed as we are redirecting to WhatsApp -->
+                    <div class="mb-4">
+                        <label for="studentName" class="block text-gray-700 font-bold mb-2">பிள்ளையின் பெயர்</label>
+                        <input type="text" id="studentName" name="studentName" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="parentName" class="block text-gray-700 font-bold mb-2">பெற்றோர் பெயர்</label>
+                        <input type="text" id="parentName" name="parentName" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="phone" class="block text-gray-700 font-bold mb-2">தொலைபேசி எண் (WhatsApp)</label>
+                        <input type="tel" id="phone" name="phone" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="w-full bg-green-800 text-white font-bold py-3 px-6 rounded-full hover:bg-green-900 transition duration-300 text-lg">விவரங்களை WhatsApp மூலம் அனுப்பவும்</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 AN-NOOR PRE SCHOOL. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const featureCards = document.querySelectorAll('.feature-card');
+
+            featureCards.forEach(card => {
+                card.addEventListener('click', function () {
+                    const targetId = this.dataset.target;
+                    const targetDetail = document.getElementById(targetId);
+
+                    const isActive = this.classList.contains('active');
+                    
+                    document.querySelectorAll('.feature-card').forEach(c => c.classList.remove('active'));
+                    document.querySelectorAll('.feature-details').forEach(d => d.style.maxHeight = '0px');
+
+                    if (!isActive) {
+                        this.classList.add('active');
+                        targetDetail.style.maxHeight = targetDetail.scrollHeight + "px";
+                    }
+                });
+            });
+
+            const admissionForm = document.getElementById('admissionForm');
+
+            admissionForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                
+                const studentName = document.getElementById('studentName').value;
+                const parentName = document.getElementById('parentName').value;
+                const phone = document.getElementById('phone').value;
+
+                if(studentName && parentName && phone) {
+                    // *** முக்கியம்: இங்கே உங்கள் வாட்ஸ்அப் எண்ணை நாட்டுக் குறியீட்டுடன் (உதாரணம்: 919999999999) இடவும். ***
+                    const targetNumber = '+94724616503'; 
+
+                    // தமிழ் மொழியில் மெசேஜை உருவாக்குதல்
+                    const message = 
+                        "அன்-நூர் பாலர் பாடசாலை மாணவர் சேர்க்கை enquiry\n\n" +
+                        "பிள்ளையின் பெயர்: " + studentName + "\n" +
+                        "பெற்றோர் பெயர்: " + parentName + "\n" +
+                        "தொலைபேசி எண்: " + phone;
+
+                    // URL encode the message
+                    const encodedMessage = encodeURIComponent(message);
+                    
+                    // Create the WhatsApp link
+                    const whatsappUrl = `https://wa.me/${targetNumber}?text=${encodedMessage}`;
+
+                    // Open WhatsApp link in a new tab/window
+                    window.open(whatsappUrl, '_blank');
+
+                    // Reset the form after the link is opened
+                    admissionForm.reset();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
